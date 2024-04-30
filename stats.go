@@ -27,7 +27,7 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-const statsPrefix = "github.com/egonelbre/spanner/"
+const statsPrefix = "cloud.google.com/go/spanner/"
 
 // Deprecated: OpenCensus project is deprecated. Use OpenTelemetry for capturing metrics.
 var (
@@ -210,7 +210,7 @@ var (
 	//
 	// Deprecated: OpenCensus project is deprecated. Use OpenTelemetry to get gfe_latency metrics.
 	GFELatencyView = &view.View{
-		Name:        "github.com/egonelbre/spanner/gfe_latency",
+		Name:        "cloud.google.com/go/spanner/gfe_latency",
 		Measure:     GFELatency,
 		Description: "Latency between Google's network receives an RPC and reads back the first byte of the response",
 		Aggregation: view.Distribution(0.0, 0.01, 0.05, 0.1, 0.3, 0.6, 0.8, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0, 10.0, 13.0,
@@ -233,7 +233,7 @@ var (
 	//
 	// Deprecated: OpenCensus project is deprecated. Use OpenTelemetry to get gfe_header_missing_count metrics.
 	GFEHeaderMissingCountView = &view.View{
-		Name:        "github.com/egonelbre/spanner/gfe_header_missing_count",
+		Name:        "cloud.google.com/go/spanner/gfe_header_missing_count",
 		Measure:     GFEHeaderMissingCount,
 		Description: "Number of RPC responses received without the server-timing header, most likely means that the RPC never reached Google's network",
 		Aggregation: view.Count(),

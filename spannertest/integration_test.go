@@ -36,11 +36,11 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
+	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
+	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/multiendpoint"
 	"github.com/egonelbre/spanner"
 	dbadmin "github.com/egonelbre/spanner/admin/database/apiv1"
 	v1 "github.com/egonelbre/spanner/apiv1"
-	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
-	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/multiendpoint"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"

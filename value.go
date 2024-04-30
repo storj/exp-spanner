@@ -30,8 +30,8 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
-	"github.com/egonelbre/spanner/internal/fields"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	"github.com/egonelbre/spanner/internal/fields"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/protobuf/proto"
 	proto3 "google.golang.org/protobuf/types/known/structpb"

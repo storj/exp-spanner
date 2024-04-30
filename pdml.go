@@ -17,8 +17,8 @@ package spanner
 import (
 	"context"
 
-	"github.com/egonelbre/spanner/internal/trace"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
 	"go.opencensus.io/tag"
 	"google.golang.org/grpc"

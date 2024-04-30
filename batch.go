@@ -23,8 +23,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/trace"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"

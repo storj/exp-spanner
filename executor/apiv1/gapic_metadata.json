@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
   "language": "go",
   "protoPackage": "google.spanner.executor.v1",
-  "libraryPackage": "github.com/egonelbre/spanner/executor/apiv1",
+  "libraryPackage": "cloud.google.com/go/spanner/executor/apiv1",
   "services": {
     "SpannerExecutorProxy": {
       "clients": {

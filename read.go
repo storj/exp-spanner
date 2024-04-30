@@ -24,9 +24,9 @@ import (
 	"sync/atomic"
 	"time"
 
+	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner/internal/protostruct"
 	"github.com/egonelbre/spanner/internal/trace"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"

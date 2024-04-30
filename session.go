@@ -29,10 +29,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/trace"
 	vkit "github.com/egonelbre/spanner/apiv1"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner/internal"
+	"github.com/egonelbre/spanner/internal/trace"
 	"go.opencensus.io/stats"
 	"go.opencensus.io/tag"
 	octrace "go.opencensus.io/trace"

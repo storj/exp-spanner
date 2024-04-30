@@ -27,8 +27,8 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
-	"github.com/egonelbre/spanner/internal/testutil"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	"github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 	"google.golang.org/api/iterator"
 	proto "google.golang.org/protobuf/proto"

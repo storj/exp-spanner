@@ -5,11 +5,15 @@ package main
 import (
 	"bytes"
 	"flag"
+	"go/ast"
+	"go/format"
+	"go/parser"
+	"go/token"
 	"io/fs"
 	"os"
 	"os/exec"
-	"path"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -101,22 +105,27 @@ func copydir(srcdir, dstdir string) {
 		dstfile := filepath.Join(dstdir, base)
 		data := must(os.ReadFile(fpath))
 
-		if filepath.Ext(fpath) == ".mod" {
+		switch filepath.Ext(fpath) {
+		case ".mod":
 			data = bytes.Replace(data,
 				[]byte("module cloud.google.com/go/spanner"),
 				[]byte("module "+targetRepo),
 				1,
 			)
-		} else {
-			for _, vendor := range vendors {
-				dst := path.Join(targetRepo, vendor.To)
-				dst = strings.TrimSuffix(dst, "/")
-
-				data = replaceImport(data,
-					path.Join("cloud.google.com/go/", vendor.From),
-					dst,
-				)
-			}
+		case ".go":
+			data = replaceImports(data, func(in string) (string, bool) {
+				if nested, ok := strings.CutPrefix(in, "cloud.google.com/go/"); ok {
+					for _, vendor := range vendors {
+						if rest, ok := strings.CutPrefix(nested, vendor.From); ok {
+							if vendor.To == "" {
+								return targetRepo + rest, true
+							}
+							return targetRepo + "/" + vendor.To + rest, true
+						}
+					}
+				}
+				return in, false
+			})
 		}
 
 		return os.WriteFile(dstfile, data, 0755)
@@ -130,12 +139,46 @@ func edit(path string, fn func(data []byte) []byte) {
 	must0(os.WriteFile(path, data, stat.Mode()))
 }
 
-func replaceImport(data []byte, imp, rep string) []byte {
-	// really hacky way to rewrite imports without parsing the code
-	data = bytes.ReplaceAll(data, []byte(`	"`+imp), []byte(`	"`+rep))
-	data = bytes.ReplaceAll(data, []byte(`, "`+imp), []byte(`<COMMASPACE>"`+imp))
-	data = bytes.ReplaceAll(data, []byte(` "`+imp), []byte(` "`+rep))
-	data = bytes.ReplaceAll(data, []byte(`<COMMASPACE>"`+imp), []byte(`, "`+imp))
-	data = bytes.ReplaceAll(data, []byte(`import "`+imp), []byte(`import "`+rep))
-	return data
+func replaceImports(data []byte, replace func(in string) (string, bool)) []byte {
+	fset := token.NewFileSet() // positions are relative to fset
+	f := must(parser.ParseFile(fset, "src.go", data, parser.ParseComments))
+
+	changed := false
+	for _, imp := range f.Imports {
+		if newPath, ok := replace(importPath(imp)); ok {
+			changed = true
+			imp.EndPos = imp.End()
+			imp.Path.Value = strconv.Quote(newPath)
+		}
+	}
+
+	for _, comgroup := range f.Comments {
+		for _, com := range comgroup.List {
+			if canImp, ok := strings.CutPrefix(com.Text, "// import "); ok {
+				if newPath, ok := replace(must(strconv.Unquote(canImp))); ok {
+					changed = true
+					com.Text = "// import " + strconv.Quote(newPath)
+				}
+			}
+		}
+	}
+
+	if !changed {
+		return data
+	}
+
+	var out bytes.Buffer
+	must0(format.Node(&out, fset, f))
+
+	return out.Bytes()
+}
+
+// importPath returns the unquoted import path of s,
+// or "" if the path is not properly quoted.
+func importPath(s *ast.ImportSpec) string {
+	t, err := strconv.Unquote(s.Path.Value)
+	if err == nil {
+		return t
+	}
+	return ""
 }

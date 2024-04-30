@@ -25,10 +25,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/trace"
 	vkit "github.com/egonelbre/spanner/apiv1"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner/internal"
+	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
 	"go.opencensus.io/tag"
 	"google.golang.org/api/option"

@@ -26,10 +26,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/trace"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
 	grpcgcppb "github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp"
+	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"

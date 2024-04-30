@@ -36,8 +36,6 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
-	"github.com/egonelbre/spanner/internal/testutil"
-	"github.com/egonelbre/spanner/internal/uid"
 	database "github.com/egonelbre/spanner/admin/database/apiv1"
 	adminpb "github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
 	instance "github.com/egonelbre/spanner/admin/instance/apiv1"
@@ -45,6 +43,8 @@ import (
 	v1 "github.com/egonelbre/spanner/apiv1"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner/internal"
+	"github.com/egonelbre/spanner/internal/testutil"
+	"github.com/egonelbre/spanner/internal/uid"
 	"github.com/stretchr/testify/require"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/tag"
