@@ -34,9 +34,9 @@ import (
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/multiendpoint"
-	itestutil "github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/googleapis/gax-go/v2"
+	itestutil "github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc/codes"
@@ -44,8 +44,8 @@ import (
 	"google.golang.org/grpc/status"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 
-	vkit "github.com/egonelbre/spanner/apiv1"
-	. "github.com/egonelbre/spanner/internal/testutil"
+	vkit "github.com/storj/exp-spanner/apiv1"
+	. "github.com/storj/exp-spanner/internal/testutil"
 )
 
 var useGRPCgcp = strings.ToLower(os.Getenv("GCLOUD_TESTS_GOLANG_USE_GRPC_GCP")) == "true"

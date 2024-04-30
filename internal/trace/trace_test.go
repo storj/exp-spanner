@@ -21,10 +21,10 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 	"github.com/googleapis/gax-go/v2/apierror"
+	"github.com/storj/exp-spanner/internal/testutil"
 	octrace "go.opencensus.io/trace"
 	"go.opentelemetry.io/otel/attribute"
 	otcodes "go.opentelemetry.io/otel/codes"

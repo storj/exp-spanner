@@ -28,8 +28,8 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	. "github.com/egonelbre/spanner/internal/testutil"
 	"github.com/googleapis/gax-go/v2/apierror"
+	. "github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc/codes"

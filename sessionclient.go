@@ -26,10 +26,10 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	vkit "github.com/egonelbre/spanner/apiv1"
-	"github.com/egonelbre/spanner/internal"
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	vkit "github.com/storj/exp-spanner/apiv1"
+	"github.com/storj/exp-spanner/internal"
+	"github.com/storj/exp-spanner/internal/trace"
 	"go.opencensus.io/tag"
 	"google.golang.org/api/option"
 	gtransport "google.golang.org/api/transport/grpc"

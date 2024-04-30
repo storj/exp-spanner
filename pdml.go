@@ -18,8 +18,8 @@ import (
 	"context"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	"github.com/storj/exp-spanner/internal/trace"
 	"go.opencensus.io/tag"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

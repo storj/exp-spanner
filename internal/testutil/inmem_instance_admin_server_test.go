@@ -23,8 +23,8 @@ import (
 	"testing"
 
 	"cloud.google.com/go/spanner/admin/instance/apiv1/instancepb"
-	instance "github.com/egonelbre/spanner/admin/instance/apiv1"
-	"github.com/egonelbre/spanner/internal/testutil"
+	instance "github.com/storj/exp-spanner/admin/instance/apiv1"
+	"github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 	"google.golang.org/protobuf/proto"

@@ -18,7 +18,7 @@ package protostruct
 import (
 	"testing"
 
-	"github.com/egonelbre/spanner/internal/testutil"
+	"github.com/storj/exp-spanner/internal/testutil"
 	pb "google.golang.org/protobuf/types/known/structpb"
 )
 

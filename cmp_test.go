@@ -20,8 +20,8 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp"
+	"github.com/storj/exp-spanner/internal/testutil"
 )
 
 // TODO(deklerk): move this to internal/testutil

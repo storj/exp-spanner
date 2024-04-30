@@ -29,8 +29,8 @@ import (
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
 	grpcgcppb "github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp"
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	"github.com/storj/exp-spanner/internal/trace"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 	"google.golang.org/api/iterator"
@@ -43,8 +43,8 @@ import (
 	"google.golang.org/grpc/encoding/gzip"
 	"google.golang.org/grpc/metadata"
 
-	vkit "github.com/egonelbre/spanner/apiv1"
-	"github.com/egonelbre/spanner/internal"
+	vkit "github.com/storj/exp-spanner/apiv1"
+	"github.com/storj/exp-spanner/internal"
 
 	// Install google-c2p resolver, which is required for direct path.
 	_ "google.golang.org/grpc/xds/googledirectpath"

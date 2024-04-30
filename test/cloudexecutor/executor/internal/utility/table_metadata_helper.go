@@ -20,7 +20,7 @@ import (
 
 	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
-	"github.com/egonelbre/spanner"
+	"github.com/storj/exp-spanner"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

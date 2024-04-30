@@ -27,7 +27,7 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	. "github.com/egonelbre/spanner/internal/testutil"
+	. "github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"

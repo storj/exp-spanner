@@ -21,8 +21,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	"github.com/storj/exp-spanner/internal/trace"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

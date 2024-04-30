@@ -16,7 +16,7 @@
 
 package instance
 
-import "github.com/egonelbre/spanner/internal"
+import "github.com/storj/exp-spanner/internal"
 
 func init() {
 	versionClient = internal.Version

@@ -25,9 +25,9 @@ import (
 	"time"
 
 	"cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner"
-	"github.com/egonelbre/spanner/internal"
-	stestutil "github.com/egonelbre/spanner/internal/testutil"
+	"github.com/storj/exp-spanner"
+	"github.com/storj/exp-spanner/internal"
+	stestutil "github.com/storj/exp-spanner/internal/testutil"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/sdk/metric/metricdata"
 	"go.opentelemetry.io/otel/sdk/metric/metricdata/metricdatatest"

@@ -1,4 +1,4 @@
-module github.com/egonelbre/spanner
+module github.com/storj/exp-spanner
 
 go 1.19
 

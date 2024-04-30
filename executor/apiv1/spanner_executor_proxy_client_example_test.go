@@ -21,7 +21,7 @@ import (
 	"io"
 
 	executorpb "cloud.google.com/go/spanner/executor/apiv1/executorpb"
-	executor "github.com/egonelbre/spanner/executor/apiv1"
+	executor "github.com/storj/exp-spanner/executor/apiv1"
 )
 
 func ExampleNewSpannerExecutorProxyClient() {

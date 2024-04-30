@@ -25,8 +25,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/egonelbre/spanner"
-	stestutil "github.com/egonelbre/spanner/internal/testutil"
+	"github.com/storj/exp-spanner"
+	stestutil "github.com/storj/exp-spanner/internal/testutil"
 )
 
 func setupMockedTestServerWithConfig(t *testing.T, config spanner.ClientConfig) (server *stestutil.MockedSpannerInMemTestServer, client *spanner.Client, teardown func()) {

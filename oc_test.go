@@ -22,9 +22,9 @@ import (
 	"time"
 
 	"cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/internal"
-	"github.com/egonelbre/spanner/internal/testutil"
-	stestutil "github.com/egonelbre/spanner/internal/testutil"
+	"github.com/storj/exp-spanner/internal"
+	"github.com/storj/exp-spanner/internal/testutil"
+	stestutil "github.com/storj/exp-spanner/internal/testutil"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/tag"
 	"google.golang.org/api/iterator"

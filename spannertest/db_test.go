@@ -32,7 +32,7 @@ import (
 	structpb "google.golang.org/protobuf/types/known/structpb"
 
 	"cloud.google.com/go/civil"
-	"github.com/egonelbre/spanner/spansql"
+	"github.com/storj/exp-spanner/spansql"
 )
 
 func TestTableCreation(t *testing.T) {

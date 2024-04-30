@@ -25,9 +25,9 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/internal/protostruct"
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	"github.com/storj/exp-spanner/internal/protostruct"
+	"github.com/storj/exp-spanner/internal/trace"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/protobuf/proto"

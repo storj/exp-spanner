@@ -30,9 +30,9 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	vkit "github.com/egonelbre/spanner/apiv1"
-	"github.com/egonelbre/spanner/internal"
-	"github.com/egonelbre/spanner/internal/trace"
+	vkit "github.com/storj/exp-spanner/apiv1"
+	"github.com/storj/exp-spanner/internal"
+	"github.com/storj/exp-spanner/internal/trace"
 	"go.opencensus.io/stats"
 	"go.opencensus.io/tag"
 	octrace "go.opencensus.io/trace"

@@ -17,7 +17,7 @@ import (
 	"strings"
 )
 
-const targetRepo = "github.com/egonelbre/spanner"
+const targetRepo = "github.com/storj/exp-spanner"
 
 type Vendor struct {
 	From, To string

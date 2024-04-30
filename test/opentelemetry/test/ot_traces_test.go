@@ -24,9 +24,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/egonelbre/spanner"
-	stestutil "github.com/egonelbre/spanner/internal/testutil"
-	"github.com/egonelbre/spanner/internal/trace"
+	"github.com/storj/exp-spanner"
+	stestutil "github.com/storj/exp-spanner/internal/testutil"
+	"github.com/storj/exp-spanner/internal/trace"
 	"go.opentelemetry.io/otel/sdk/trace/tracetest"
 )
 

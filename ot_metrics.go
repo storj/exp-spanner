@@ -21,7 +21,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/egonelbre/spanner/internal"
+	"github.com/storj/exp-spanner/internal"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"

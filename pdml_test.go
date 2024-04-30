@@ -24,7 +24,7 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	. "github.com/egonelbre/spanner/internal/testutil"
+	. "github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/encoding/gzip"
 	"google.golang.org/grpc/status"

@@ -21,7 +21,7 @@ import (
 	"context"
 
 	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
-	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/inputstream"
+	"github.com/storj/exp-spanner/test/cloudexecutor/executor/internal/inputstream"
 	"google.golang.org/api/option"
 )
 

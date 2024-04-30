@@ -23,8 +23,8 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/internal/trace"
 	"github.com/googleapis/gax-go/v2"
+	"github.com/storj/exp-spanner/internal/trace"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -32,7 +32,7 @@ import (
 	"google.golang.org/grpc/status"
 	"google.golang.org/protobuf/proto"
 
-	vkit "github.com/egonelbre/spanner/apiv1"
+	vkit "github.com/storj/exp-spanner/apiv1"
 	durationpb "google.golang.org/protobuf/types/known/durationpb"
 )
 

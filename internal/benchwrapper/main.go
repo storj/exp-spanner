@@ -24,8 +24,8 @@ import (
 	"net"
 	"os"
 
-	"github.com/egonelbre/spanner"
-	pb "github.com/egonelbre/spanner/internal/benchwrapper/proto"
+	"github.com/storj/exp-spanner"
+	pb "github.com/storj/exp-spanner/internal/benchwrapper/proto"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc"
 )

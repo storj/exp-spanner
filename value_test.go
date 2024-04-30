@@ -29,8 +29,8 @@ import (
 
 	"cloud.google.com/go/civil"
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp"
+	"github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
 	proto3 "google.golang.org/protobuf/types/known/structpb"

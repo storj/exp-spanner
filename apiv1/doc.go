@@ -92,7 +92,7 @@
 // [Testing against Client Libraries]: https://pkg.go.dev/cloud.google.com/go#hdr-Testing
 // [Debugging Client Libraries]: https://pkg.go.dev/cloud.google.com/go#hdr-Debugging
 // [Inspecting errors]: https://pkg.go.dev/cloud.google.com/go#hdr-Inspecting_errors
-package spanner // import "github.com/egonelbre/spanner/apiv1"
+package spanner // import "github.com/storj/exp-spanner/apiv1"
 
 import (
 	"context"

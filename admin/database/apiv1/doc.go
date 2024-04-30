@@ -97,7 +97,7 @@
 // [Testing against Client Libraries]: https://pkg.go.dev/cloud.google.com/go#hdr-Testing
 // [Debugging Client Libraries]: https://pkg.go.dev/cloud.google.com/go#hdr-Debugging
 // [Inspecting errors]: https://pkg.go.dev/cloud.google.com/go#hdr-Inspecting_errors
-package database // import "github.com/egonelbre/spanner/admin/database/apiv1"
+package database // import "github.com/storj/exp-spanner/admin/database/apiv1"
 
 import (
 	"context"

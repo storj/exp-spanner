@@ -21,7 +21,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/egonelbre/spanner/spansql"
+	"github.com/storj/exp-spanner/spansql"
 )
 
 /*

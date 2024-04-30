@@ -20,7 +20,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/egonelbre/spanner/internal"
+	"github.com/storj/exp-spanner/internal"
 	"go.opencensus.io/stats"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/tag"

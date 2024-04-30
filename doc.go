@@ -354,4 +354,4 @@ This client has been instrumented to use OpenCensus tracing
 at https://godoc.org/go.opencensus.io/trace. OpenCensus tracing requires Go 1.8
 or higher.
 */
-package spanner // import "github.com/egonelbre/spanner"
+package spanner // import "github.com/storj/exp-spanner"

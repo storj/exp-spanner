@@ -22,8 +22,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/egonelbre/spanner/internal/testutil"
 	"github.com/google/go-cmp/cmp"
+	"github.com/storj/exp-spanner/internal/testutil"
 )
 
 type embed1 struct {

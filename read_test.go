@@ -26,9 +26,9 @@ import (
 	"time"
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
-	vkit "github.com/egonelbre/spanner/apiv1"
-	. "github.com/egonelbre/spanner/internal/testutil"
 	"github.com/googleapis/gax-go/v2"
+	vkit "github.com/storj/exp-spanner/apiv1"
+	. "github.com/storj/exp-spanner/internal/testutil"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

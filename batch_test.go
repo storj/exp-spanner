@@ -24,7 +24,7 @@ import (
 
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 
-	. "github.com/egonelbre/spanner/internal/testutil"
+	. "github.com/storj/exp-spanner/internal/testutil"
 )
 
 func TestPartitionRoundTrip(t *testing.T) {

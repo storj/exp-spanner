@@ -18,7 +18,7 @@ import (
 	"io"
 	"strconv"
 
-	. "github.com/egonelbre/spanner/internal/testutil"
+	. "github.com/storj/exp-spanner/internal/testutil"
 
 	"context"
 	"flag"
@@ -33,7 +33,7 @@ import (
 	"google.golang.org/grpc/codes"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 
-	apiv1 "github.com/egonelbre/spanner/apiv1"
+	apiv1 "github.com/storj/exp-spanner/apiv1"
 	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/grpc"

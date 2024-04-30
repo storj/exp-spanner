@@ -22,7 +22,7 @@ import (
 	"cloud.google.com/go/civil"
 	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
-	"github.com/egonelbre/spanner"
+	"github.com/storj/exp-spanner"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	proto3 "google.golang.org/protobuf/types/known/structpb"

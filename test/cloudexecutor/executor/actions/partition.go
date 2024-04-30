@@ -21,9 +21,9 @@ import (
 
 	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
-	"github.com/egonelbre/spanner"
-	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/outputstream"
-	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/utility"
+	"github.com/storj/exp-spanner"
+	"github.com/storj/exp-spanner/test/cloudexecutor/executor/internal/outputstream"
+	"github.com/storj/exp-spanner/test/cloudexecutor/executor/internal/utility"
 	spb "google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
