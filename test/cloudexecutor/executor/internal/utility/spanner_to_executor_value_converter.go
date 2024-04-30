@@ -20,9 +20,9 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
+	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
-	"github.com/egonelbre/spanner/executor/apiv1/executorpb"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 	proto3 "google.golang.org/protobuf/types/known/structpb"

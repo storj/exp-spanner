@@ -26,7 +26,7 @@ import (
 	"net/url"
 	"time"
 
-	spannerpb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	spannerpb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/googleapi"
 	"google.golang.org/api/iterator"

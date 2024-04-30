@@ -23,8 +23,8 @@ import (
 	"sync"
 	"time"
 
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

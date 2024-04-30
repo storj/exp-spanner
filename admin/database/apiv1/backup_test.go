@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/longrunning/autogen/longrunningpb"
-	"github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
+	"cloud.google.com/go/spanner/admin/database/apiv1/databasepb"
 	status "google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"

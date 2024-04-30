@@ -23,7 +23,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/civil"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
 	proto3 "google.golang.org/protobuf/types/known/structpb"

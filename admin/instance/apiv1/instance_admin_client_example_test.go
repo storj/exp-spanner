@@ -20,8 +20,8 @@ import (
 	"context"
 
 	iampb "cloud.google.com/go/iam/apiv1/iampb"
+	instancepb "cloud.google.com/go/spanner/admin/instance/apiv1/instancepb"
 	instance "github.com/egonelbre/spanner/admin/instance/apiv1"
-	instancepb "github.com/egonelbre/spanner/admin/instance/apiv1/instancepb"
 	"google.golang.org/api/iterator"
 )
 

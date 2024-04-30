@@ -27,7 +27,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/egonelbre/spanner/apiv1/spannerpb"
+	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/genproto/googleapis/rpc/status"
 	"google.golang.org/grpc"

@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/egonelbre/spanner/apiv1/spannerpb"
+	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	"github.com/egonelbre/spanner/internal"
 	"github.com/egonelbre/spanner/internal/testutil"
 	stestutil "github.com/egonelbre/spanner/internal/testutil"

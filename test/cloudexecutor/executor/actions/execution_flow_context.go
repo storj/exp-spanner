@@ -21,8 +21,8 @@ import (
 	"sync"
 	"time"
 
+	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner"
-	"github.com/egonelbre/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/utility"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

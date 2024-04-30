@@ -50,7 +50,7 @@ func main() {
 		if preserve[entry.Name()] {
 			continue
 		}
-		must0(os.RemoveAll(entry.Name()))
+		must0(os.RemoveAll(filepath.Join(*rootdir, entry.Name())))
 	}
 
 	for _, vendor := range vendors {
@@ -67,6 +67,7 @@ func main() {
 		return data
 	})
 
+	must(runat(*rootdir, "go", "get", "cloud.google.com/go/spanner@v1.61.0"))
 	must(runat(*rootdir, "go", "mod", "tidy"))
 }
 
@@ -99,6 +100,9 @@ func copydir(srcdir, dstdir string) {
 		base := must(filepath.Rel(srcdir, fpath))
 
 		if d.IsDir() {
+			if strings.HasSuffix(base, "pb") {
+				return filepath.SkipDir
+			}
 			return os.MkdirAll(filepath.Join(dstdir, base), 0755)
 		}
 
@@ -115,6 +119,10 @@ func copydir(srcdir, dstdir string) {
 		case ".go":
 			data = replaceImports(data, func(in string) (string, bool) {
 				if nested, ok := strings.CutPrefix(in, "cloud.google.com/go/"); ok {
+					if strings.HasSuffix(nested, "pb") {
+						return in, false
+					}
+
 					for _, vendor := range vendors {
 						if rest, ok := strings.CutPrefix(nested, vendor.From); ok {
 							if vendor.To == "" {

@@ -26,7 +26,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/egonelbre/spanner/executor/apiv1/executorpb"
+	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"

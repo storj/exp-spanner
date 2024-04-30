@@ -67,8 +67,8 @@ import (
 	"google.golang.org/protobuf/types/known/timestamppb"
 
 	lropb "cloud.google.com/go/longrunning/autogen/longrunningpb"
-	adminpb "github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
-	"github.com/egonelbre/spanner/apiv1/spannerpb"
+	adminpb "cloud.google.com/go/spanner/admin/database/apiv1/databasepb"
+	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	anypb "google.golang.org/protobuf/types/known/anypb"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	structpb "google.golang.org/protobuf/types/known/structpb"

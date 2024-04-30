@@ -29,7 +29,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/egonelbre/spanner/apiv1/spannerpb"
+	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	"google.golang.org/grpc/codes"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 

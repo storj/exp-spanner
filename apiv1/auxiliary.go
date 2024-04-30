@@ -17,7 +17,7 @@
 package spanner
 
 import (
-	spannerpb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	spannerpb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"google.golang.org/api/iterator"
 )
 

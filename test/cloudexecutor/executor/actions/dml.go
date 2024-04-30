@@ -18,8 +18,8 @@ import (
 	"context"
 	"log"
 
+	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner"
-	"github.com/egonelbre/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/outputstream"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/utility"
 	"google.golang.org/grpc/codes"

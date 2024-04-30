@@ -23,7 +23,7 @@ import (
 	"testing"
 	"time"
 
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	. "github.com/egonelbre/spanner/internal/testutil"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/encoding/gzip"

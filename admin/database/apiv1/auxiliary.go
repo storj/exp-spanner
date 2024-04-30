@@ -22,7 +22,7 @@ import (
 
 	"cloud.google.com/go/longrunning"
 	longrunningpb "cloud.google.com/go/longrunning/autogen/longrunningpb"
-	databasepb "github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
+	databasepb "cloud.google.com/go/spanner/admin/database/apiv1/databasepb"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/api/iterator"
 )

@@ -23,11 +23,11 @@ import (
 	"testing"
 	"time"
 
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp"
 	"github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/multiendpoint"
 	vkit "github.com/egonelbre/spanner/apiv1"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	. "github.com/egonelbre/spanner/internal/testutil"
 	gax "github.com/googleapis/gax-go/v2"
 	"google.golang.org/grpc"

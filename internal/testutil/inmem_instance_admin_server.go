@@ -17,7 +17,7 @@ package testutil
 import (
 	"context"
 
-	"github.com/egonelbre/spanner/admin/instance/apiv1/instancepb"
+	"cloud.google.com/go/spanner/admin/instance/apiv1/instancepb"
 	"google.golang.org/protobuf/proto"
 )
 

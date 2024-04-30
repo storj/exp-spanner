@@ -19,8 +19,8 @@ package spanner_test
 import (
 	"context"
 
+	spannerpb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	spanner "github.com/egonelbre/spanner/apiv1"
-	spannerpb "github.com/egonelbre/spanner/apiv1/spannerpb"
 	"google.golang.org/api/iterator"
 )
 

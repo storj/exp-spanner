@@ -21,8 +21,8 @@ import (
 
 	iampb "cloud.google.com/go/iam/apiv1/iampb"
 	longrunningpb "cloud.google.com/go/longrunning/autogen/longrunningpb"
+	databasepb "cloud.google.com/go/spanner/admin/database/apiv1/databasepb"
 	database "github.com/egonelbre/spanner/admin/database/apiv1"
-	databasepb "github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
 	"google.golang.org/api/iterator"
 )
 

@@ -20,8 +20,8 @@ import (
 	"context"
 	"io"
 
+	executorpb "cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	executor "github.com/egonelbre/spanner/executor/apiv1"
-	executorpb "github.com/egonelbre/spanner/executor/apiv1/executorpb"
 )
 
 func ExampleNewSpannerExecutorProxyClient() {

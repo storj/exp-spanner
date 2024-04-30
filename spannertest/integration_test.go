@@ -48,8 +48,8 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/status"
 
-	dbadminpb "github.com/egonelbre/spanner/admin/database/apiv1/databasepb"
-	"github.com/egonelbre/spanner/apiv1/spannerpb"
+	dbadminpb "cloud.google.com/go/spanner/admin/database/apiv1/databasepb"
+	"cloud.google.com/go/spanner/apiv1/spannerpb"
 	structpb "google.golang.org/protobuf/types/known/structpb"
 )
 

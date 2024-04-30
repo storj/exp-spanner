@@ -22,7 +22,7 @@ import (
 	"testing"
 
 	"cloud.google.com/go/civil"
-	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
+	sppb "cloud.google.com/go/spanner/apiv1/spannerpb"
 	"google.golang.org/api/iterator"
 	proto3 "google.golang.org/protobuf/types/known/structpb"
 )

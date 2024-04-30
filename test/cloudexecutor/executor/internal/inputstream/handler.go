@@ -24,8 +24,8 @@ import (
 	"log"
 	"sync"
 
+	"cloud.google.com/go/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner"
-	"github.com/egonelbre/spanner/executor/apiv1/executorpb"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor/actions"
 	"github.com/egonelbre/spanner/test/cloudexecutor/executor/internal/outputstream"
 	"google.golang.org/api/option"
