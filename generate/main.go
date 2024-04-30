@@ -36,6 +36,7 @@ func main() {
 		"generate":        true,
 		"go.mod":          true,
 		"google-cloud-go": true,
+		"LICENSE":         true,
 	}
 
 	for _, entry := range must(os.ReadDir(*rootdir)) {
