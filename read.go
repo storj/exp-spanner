@@ -79,7 +79,7 @@ func streamWithReplaceSessionFunc(
 	release func(error),
 ) *RowIterator {
 	ctx, cancel := context.WithCancel(ctx)
-	ctx = trace.StartSpan(ctx, "github.com/egonelbre/spanner.RowIterator")
+	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.RowIterator")
 	return &RowIterator{
 		streamd:          newResumableStreamDecoder(ctx, logger, rpc, replaceSession),
 		rowd:             &partialResultSetDecoder{},

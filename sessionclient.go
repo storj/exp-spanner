@@ -243,7 +243,7 @@ func (sc *sessionClient) batchCreateSessions(createSessionCount int32, distribut
 func (sc *sessionClient) executeBatchCreateSessions(client *vkit.Client, createCount int32, labels map[string]string, md metadata.MD, consumer sessionConsumer) {
 	ctx, cancel := context.WithTimeout(context.Background(), sc.batchTimeout)
 	defer cancel()
-	ctx = trace.StartSpan(ctx, "github.com/egonelbre/spanner.BatchCreateSessions")
+	ctx = trace.StartSpan(ctx, "cloud.google.com/go/spanner.BatchCreateSessions")
 	defer func() { trace.EndSpan(ctx, nil) }()
 	trace.TracePrintf(ctx, nil, "Creating a batch of %d sessions", createCount)
 	remainingCreateCount := createCount

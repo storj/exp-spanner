@@ -13,6 +13,8 @@ import (
 	"strings"
 )
 
+const targetRepo = "github.com/egonelbre/spanner"
+
 type Vendor struct {
 	From, To string
 }
@@ -102,12 +104,12 @@ func copydir(srcdir, dstdir string) {
 		if filepath.Ext(fpath) == ".mod" {
 			data = bytes.Replace(data,
 				[]byte("module cloud.google.com/go/spanner"),
-				[]byte("module github.com/egonelbre/spanner"),
+				[]byte("module "+targetRepo),
 				1,
 			)
 		} else {
 			for _, vendor := range vendors {
-				dst := path.Join("github.com/egonelbre/spanner", vendor.To)
+				dst := path.Join(targetRepo, vendor.To)
 				dst = strings.TrimSuffix(dst, "/")
 
 				data = replaceImport(data,
@@ -129,8 +131,11 @@ func edit(path string, fn func(data []byte) []byte) {
 }
 
 func replaceImport(data []byte, imp, rep string) []byte {
+	// really hacky way to rewrite imports without parsing the code
 	data = bytes.ReplaceAll(data, []byte(`	"`+imp), []byte(`	"`+rep))
+	data = bytes.ReplaceAll(data, []byte(`, "`+imp), []byte(`<COMMASPACE>"`+imp))
 	data = bytes.ReplaceAll(data, []byte(` "`+imp), []byte(` "`+rep))
+	data = bytes.ReplaceAll(data, []byte(`<COMMASPACE>"`+imp), []byte(`, "`+imp))
 	data = bytes.ReplaceAll(data, []byte(`import "`+imp), []byte(`import "`+rep))
 	return data
 }
