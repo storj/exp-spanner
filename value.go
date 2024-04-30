@@ -32,7 +32,6 @@ import (
 	"cloud.google.com/go/civil"
 	"github.com/egonelbre/spanner/internal/fields"
 	sppb "github.com/egonelbre/spanner/apiv1/spannerpb"
-	jsoniter "github.com/json-iterator/go"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/protobuf/proto"
 	proto3 "google.golang.org/protobuf/types/known/structpb"
@@ -114,7 +113,7 @@ var (
 
 	jsonNullBytes = []byte("null")
 
-	jsonProvider = jsoniter.ConfigCompatibleWithStandardLibrary
+	jsonProvider = jsoniter_ConfigCompatibleWithStandardLibrary
 )
 
 // UseNumberWithJSONDecoderEncoder specifies whether Cloud Spanner JSON numbers are decoded
@@ -124,7 +123,7 @@ var (
 // NOTE 1: Calling this method affects the behavior of all clients created by this library, both existing and future instances.
 // NOTE 2: This method sets a global variable that is used by the client to encode/decode JSON numbers. Access to the global variable is not synchronized. You should only call this method when there are no goroutines encoding/decoding Cloud Spanner JSON values. It is recommended to only call this method during the initialization of your application, and preferably before you create any Cloud Spanner clients, and/or in tests when there are no queries being executed.
 func UseNumberWithJSONDecoderEncoder(useNumber bool) {
-	jsonProvider = jsoniter.Config{
+	jsonProvider = jsoniter_Config{
 		EscapeHTML:  true,
 		SortMapKeys: true, // Sort map keys to ensure deterministic output, to be consistent with encoding.
 		UseNumber:   useNumber,

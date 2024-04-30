@@ -31,12 +31,13 @@ func main() {
 	flag.Parse()
 
 	preserve := map[string]bool{
-		".git":            true,
-		".gitmodules":     true,
-		"generate":        true,
-		"go.mod":          true,
-		"google-cloud-go": true,
-		"LICENSE":         true,
+		".git":                  true,
+		".gitmodules":           true,
+		"generate":              true,
+		"go.mod":                true,
+		"value_jsonprovider.go": true,
+		"google-cloud-go":       true,
+		"LICENSE":               true,
 	}
 
 	for _, entry := range must(os.ReadDir(*rootdir)) {
@@ -52,6 +53,13 @@ func main() {
 			filepath.Join(*rootdir, filepath.FromSlash(vendor.To)),
 		)
 	}
+
+	edit(filepath.Join(*rootdir, "value.go"), func(data []byte) []byte {
+		data = bytes.ReplaceAll(data, []byte("\tjsoniter \"github.com/json-iterator/go\"\n"), []byte(""))
+		data = bytes.ReplaceAll(data, []byte("jsoniter.Config"), []byte("jsoniter_Config"))
+		data = bytes.ReplaceAll(data, []byte("jsoniter.ConfigCompatibleWithStandardLibrary"), []byte("jsoniter_ConfigCompatibleWithStandardLibrary"))
+		return data
+	})
 
 	must(runat(*rootdir, "go", "mod", "tidy"))
 }
