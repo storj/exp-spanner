@@ -1,5 +1,127 @@
 package main
 
-func main() {
+//go:generate go run . --root ..
 
+import (
+	"bytes"
+	"flag"
+	"io/fs"
+	"os"
+	"os/exec"
+	"path"
+	"path/filepath"
+	"strings"
+)
+
+type Vendor struct {
+	From, To string
+}
+
+var vendors = []Vendor{
+	{"spanner", ""},
+	{"internal/fields", "internal/fields"},
+	{"internal/protostruct", "internal/protostruct"},
+	{"internal/trace", "internal/trace"},
+	{"internal/testutil", "internal/testutil"},
+	{"internal/uid", "internal/uid"},
+}
+
+func main() {
+	rootdir := flag.String("root", "", "module root directory")
+	flag.Parse()
+
+	preserve := map[string]bool{
+		".git":            true,
+		".gitmodules":     true,
+		"generate":        true,
+		"go.mod":          true,
+		"google-cloud-go": true,
+	}
+
+	for _, entry := range must(os.ReadDir(*rootdir)) {
+		if preserve[entry.Name()] {
+			continue
+		}
+		must0(os.RemoveAll(entry.Name()))
+	}
+
+	for _, vendor := range vendors {
+		copydir(
+			filepath.Join(*rootdir, "google-cloud-go", filepath.FromSlash(vendor.From)),
+			filepath.Join(*rootdir, filepath.FromSlash(vendor.To)),
+		)
+	}
+
+	must(runat(*rootdir, "go", "mod", "tidy"))
+}
+
+func must0(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+func must[T any](v T, err error) T {
+	if err != nil {
+		panic(err)
+	}
+	return v
+}
+
+func runat(dir, cmd string, args ...string) (string, error) {
+	c := exec.Command(cmd, args...)
+	c.Dir = dir
+	out, err := c.Output()
+	return string(out), err
+}
+
+func copydir(srcdir, dstdir string) {
+	must0(os.MkdirAll(dstdir, 0755))
+	must0(filepath.WalkDir(srcdir, func(fpath string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+		base := must(filepath.Rel(srcdir, fpath))
+
+		if d.IsDir() {
+			return os.MkdirAll(filepath.Join(dstdir, base), 0755)
+		}
+
+		dstfile := filepath.Join(dstdir, base)
+		data := must(os.ReadFile(fpath))
+
+		if filepath.Ext(fpath) == ".mod" {
+			data = bytes.Replace(data,
+				[]byte("module cloud.google.com/go/spanner"),
+				[]byte("module github.com/egonelbre/spanner"),
+				1,
+			)
+		} else {
+			for _, vendor := range vendors {
+				dst := path.Join("github.com/egonelbre/spanner", vendor.To)
+				dst = strings.TrimSuffix(dst, "/")
+
+				data = replaceImport(data,
+					path.Join("cloud.google.com/go/", vendor.From),
+					dst,
+				)
+			}
+		}
+
+		return os.WriteFile(dstfile, data, 0755)
+	}))
+}
+
+func edit(path string, fn func(data []byte) []byte) {
+	stat := must(os.Stat(path))
+	data := must(os.ReadFile(path))
+	data = fn(data)
+	must0(os.WriteFile(path, data, stat.Mode()))
+}
+
+func replaceImport(data []byte, imp, rep string) []byte {
+	data = bytes.ReplaceAll(data, []byte(`	"`+imp), []byte(`	"`+rep))
+	data = bytes.ReplaceAll(data, []byte(` "`+imp), []byte(` "`+rep))
+	data = bytes.ReplaceAll(data, []byte(`import "`+imp), []byte(`import "`+rep))
+	return data
 }
